@@ -69,7 +69,7 @@ public class SomaNumero {
     public void exibirNumeros(){
         if(!listaNumeros.isEmpty()){
             for(int numero: listaNumeros){
-                System.out.printf("%i \t", numero);
+                System.out.printf("%d \t", numero);
             }
         }
     }
