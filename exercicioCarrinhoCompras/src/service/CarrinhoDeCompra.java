@@ -17,7 +17,15 @@ public class CarrinhoDeCompra {
     }
 
     public void removerItem(String nome){
-        listaItem.remove(nome);
+        Item removeItem = null;
+
+        for(Item items: listaItem){
+            if(items.getNome() == nome){
+                removeItem = items;
+            }
+        }
+
+        listaItem.remove(removeItem);
     }
 
     public double calcularValorTotal(){
