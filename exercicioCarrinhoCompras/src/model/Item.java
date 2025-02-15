@@ -22,4 +22,9 @@ public class Item {
     public int getQuantidade(){
         return quantidade;
     }
+
+    @Override
+    public String toString() {
+        return getNome()+ "  -  "+getPreco()+"  -  "+getQuantidade();
+    }
 }
