@@ -19,13 +19,15 @@ public class CarrinhoDeCompra {
     public void removerItem(String nome){
         Item removeItem = null;
 
-        for(Item items: listaItem){
-            if(items.getNome() == nome){
-                removeItem = items;
+        if(!listaItem.isEmpty()) {
+            for (Item items : listaItem) {
+                if (items.getNome().equalsIgnoreCase(nome)) {
+                    removeItem = items;
+                }
             }
-        }
 
-        listaItem.remove(removeItem);
+            listaItem.remove(removeItem);
+        }
     }
 
     public double calcularValorTotal(){
