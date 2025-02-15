@@ -23,10 +23,10 @@ public class OrdenacaoNumero {
         return listaAscendente;
     }
 
-    public List<Integer> prdenarDescendente(){
+    public List<Integer> ordenarDescendente(){
         List<Integer> listaDescendente = new ArrayList<>(listaNumero);
-
-        Collections.reverse(listaDescendente);
+        
+        Collections.sort(listaDescendente, Collections.reverseOrder());
 
         return listaDescendente;
     }
