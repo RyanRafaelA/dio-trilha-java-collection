@@ -4,9 +4,9 @@ public class Tarefa {
     private String descrição;
     private boolean andamentoTarefa;
 
-    public Tarefa(String descrição, boolean andamentoTarefa){
+    public Tarefa(String descrição){
         this.descrição = descrição;
-        this.andamentoTarefa = andamentoTarefa;
+        this.andamentoTarefa = false;
     }
 
     public String getDescrição(){
