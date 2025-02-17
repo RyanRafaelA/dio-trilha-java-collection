@@ -31,7 +31,11 @@ public class ListaTarefas {
     }
 
     public void exibirTarefas(){
-        System.out.println(tarefaSet);
+        if(!tarefaSet.isEmpty()) {
+            for (Tarefa tarefas : tarefaSet) {
+                System.out.println(tarefas);
+            }
+        }
     }
 
     public int contarTarefas(){
