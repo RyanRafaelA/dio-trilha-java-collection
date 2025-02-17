@@ -1,24 +1,28 @@
 package model;
 
 public class Tarefa {
-    private String descrição;
+    private String descricao;
     private boolean andamentoTarefa;
 
-    public Tarefa(String descrição){
-        this.descrição = descrição;
+    public Tarefa(String descricao){
+        this.descricao = descricao;
         this.andamentoTarefa = false;
     }
 
-    public String getDescrição(){
-        return descrição;
+    public String getDescricao(){
+        return descricao;
     }
 
     public boolean getAndamentoTarefa(){
         return andamentoTarefa;
     }
 
+    public void setAndamentoTarefa(boolean novaAtualizacao){
+        this.andamentoTarefa = novaAtualizacao;
+    }
+
     @Override
     public String toString() {
-        return getDescrição() + "  ->  " + getAndamentoTarefa();
+        return getDescricao() + "  ->  " + getAndamentoTarefa();
     }
 }
