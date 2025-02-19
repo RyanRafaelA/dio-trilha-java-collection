@@ -16,9 +16,8 @@ public class ConjuntoPalavrasUnicas {
         testeVerificacao = verificarPalavra(palavra);
 
         if(testeVerificacao){
-            System.out.printf("A palavra %s já existe", palavra);
+            System.out.printf("A palavra %s já existe\n", palavra);
         } else{
-            System.out.printf("A palavra %s adicionada", palavra);
             setPalavras.add(palavra);
         }
     }
@@ -30,13 +29,17 @@ public class ConjuntoPalavrasUnicas {
 
         if(testeVerificacao){
             setPalavras.remove(palavra);
-            System.out.printf("A palavra %s foi removida", palavra);
+            System.out.printf("A palavra %s foi removida\n", palavra);
         } else{
-            System.out.printf("A palavra %s não existe", palavra);
+            System.out.printf("A palavra %s não existe\n", palavra);
         }
     }
 
     public boolean verificarPalavra(String palavra){
         return setPalavras.contains(palavra);
+    }
+
+    public void exibirPalavrasUnicas(){
+        setPalavras.forEach(x -> System.out.println(x));
     }
 }
