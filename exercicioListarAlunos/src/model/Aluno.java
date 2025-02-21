@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Aluno implements Comparable<Aluno>{
     private String nome;
-    private Long matricula;
+    private long matricula;
     private double media;
 
-    public Aluno(String nome, Long matricula, double media){
+    public Aluno(String nome, long matricula, double media){
         this.nome = nome;
         this.matricula = matricula;
         this.media = media;
@@ -17,7 +17,7 @@ public class Aluno implements Comparable<Aluno>{
         return nome;
     }
 
-    public Long getMatricula(){
+    public long getMatricula(){
         return matricula;
     }
 
@@ -27,7 +27,7 @@ public class Aluno implements Comparable<Aluno>{
 
     @Override
     public int compareTo(Aluno aluno) {
-        return nome.compareTo(aluno.getNome());
+        return nome.compareToIgnoreCase(aluno.getNome());
     }
 
     @Override
