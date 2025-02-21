@@ -1,6 +1,7 @@
 package service;
 
 import model.Aluno;
+import util.ComparatorPorNota;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,4 +47,11 @@ public class GerenciadorAlunos {
         alunosPorNome.forEach(x -> System.out.println(x));
     }
 
+    public void exibirAlunosPorNota(){
+        Set<Aluno> alunosPorNota =  new TreeSet<>(new ComparatorPorNota());
+
+        alunosPorNota.addAll(alunoSet);
+
+        alunosPorNota.forEach(x -> System.out.println(x));
+    }
 }
