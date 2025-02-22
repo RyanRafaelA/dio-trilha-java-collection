@@ -32,7 +32,7 @@ public class Aluno implements Comparable<Aluno>{
 
     @Override
     public String toString() {
-        return "Matricula: "+matricula+" Nome: "+nome+"\nMedia: "+String.format("%0.2f", media);
+        return "Matricula: "+matricula+" Nome: "+nome+"\nMedia: "+String.format("%.2f", media);
     }
 
     @Override
