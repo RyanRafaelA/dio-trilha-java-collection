@@ -20,7 +20,7 @@ public class ContagemPalavra {
         }
     }
 
-    public void exibirCOntagemPalavras(){
+    public void exibirContagemPalavras(){
         if(!contagemPalavra.isEmpty()){
             contagemPalavra.forEach((chave, valor) -> System.out.println(chave+": "+valor));
         }
