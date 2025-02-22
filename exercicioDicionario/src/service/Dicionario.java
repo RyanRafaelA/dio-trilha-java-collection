@@ -22,11 +22,7 @@ public class Dicionario {
 
     public void exibirPalavras(){
         if(!dicionario.isEmpty()) {
-            for(String palavra: dicionario.keySet()){
-                for(String definicao: dicionario.values()){
-                    System.out.println(palavra+": "+definicao);
-                }
-            }
+            dicionario.forEach((chave, valor) -> System.out.println(chave+": "+valor));
         }
     }
 
