@@ -1,6 +1,8 @@
 package service;
 
 import model.Livro;
+import util.ComparatorPorAutor;
+import util.ComparatorPorPreco;
 
 import java.util.*;
 
@@ -38,10 +40,32 @@ public class LivrariaOnline {
         }
     }
 
-    public void exibirLivrosOrdenadosPorPreco(){
-        Map<String, Livro> livrosOrdenadosPorPreco = new TreeMap<>(livraria);
+    public Map<String, Livro> exibirLivrosOrdenadosPorPreco(){
+        List<Map.Entry<String, Livro>> livroParaOrdenarPorPreco = new ArrayList<>(livraria.entrySet());
 
-        livrosOrdenadosPorPreco.forEach((chave,valor) -> System.out.println(chave+": "+valor));
+        Collections.sort(livroParaOrdenarPorPreco, new ComparatorPorPreco());
+
+        Map<String, Livro> livrosOrdenadosPorPreco = new LinkedHashMap<>();
+
+        for(Map.Entry<String, Livro> entry: livroParaOrdenarPorPreco){
+            livrosOrdenadosPorPreco.put(entry.getKey(), entry.getValue());
+        }
+
+        return livrosOrdenadosPorPreco;
+    }
+
+    public Map<String, Livro> exibirLivrosOrdenadosPorAutor(){
+        List<Map.Entry<String, Livro>> livrosParaOrdenarPorAutor = new ArrayList<>(livraria.entrySet());
+
+        Collections.sort(livrosParaOrdenarPorAutor, new ComparatorPorAutor());
+
+        Map<String, Livro> livrosOrdenadosPorAutor = new LinkedHashMap<>();
+
+        for(Map.Entry<String, Livro> entry: livrosParaOrdenarPorAutor){
+            livrosOrdenadosPorAutor.put(entry.getKey(), entry.getValue());
+        }
+
+        return livrosOrdenadosPorAutor;
     }
 
     public List<Livro> pesquisarLivrosPorAutor(String autor){
@@ -74,6 +98,7 @@ public class LivrariaOnline {
                 preco = livros.getPreco();
 
                 if(preco > maiorPreco){
+                    maiorPreco = preco;
                     livroMaisCaro = livros;
                 }
             }
@@ -94,6 +119,7 @@ public class LivrariaOnline {
                 preco = livros.getPreco();
 
                 if(preco < menorPreco){
+                    menorPreco = preco;
                     livroMaisBarato = livros;
                 }
             }
