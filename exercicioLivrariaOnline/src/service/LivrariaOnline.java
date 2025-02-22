@@ -39,7 +39,7 @@ public class LivrariaOnline {
     }
 
     public void exibirLivrosOrdenadosPorPreco(){
-        Map<String, Livro> livrosOrdenadosPorPreco = new LinkedHashMap<>(livraria);
+        Map<String, Livro> livrosOrdenadosPorPreco = new TreeMap<>(livraria);
 
         livrosOrdenadosPorPreco.forEach((chave,valor) -> System.out.println(chave+": "+valor));
     }
@@ -78,7 +78,7 @@ public class LivrariaOnline {
                 }
             }
         }
-        return livroMaisCaro
+        return livroMaisCaro;
     }
 
     public Livro obterLivroMaisBarato(){

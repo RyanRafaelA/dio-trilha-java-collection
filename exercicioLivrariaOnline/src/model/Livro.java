@@ -1,9 +1,8 @@
 package model;
 
-import java.util.Comparator;
 import java.util.Objects;
 
-public class Livro implements Comparator<Livro>{
+public class Livro{
     private String titulo;
     private String autor;
     private double preco;
@@ -17,11 +16,6 @@ public class Livro implements Comparator<Livro>{
     public String getTitulo(){ return titulo; }
     public String getAutor(){ return autor; }
     public double getPreco(){ return preco; }
-
-    @Override
-    public int compare(Livro l1, Livro l2) {
-        return Double.compare(l1.getPreco(), l2.getPreco());
-    }
 
     @Override
     public String toString() {
